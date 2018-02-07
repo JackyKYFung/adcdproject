@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './chat.css';
-import mySocket from 'socket.io-client'
+import mySocket from 'socket.io-client';
 
 class App extends Component {
     
