@@ -31,7 +31,7 @@ class App extends Component {
         this.setState({
             mode:1
         })
-        this.socket = mySocket("http://localhost:10001");
+        this.socket = mySocket("https://adcdprojectsocket.herokuapp.com");
         //names over to the server
         this.socket.emit("uname", this.state.myname);
         //getting data from the server and emiting who is in the web
