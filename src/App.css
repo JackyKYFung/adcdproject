@@ -33,34 +33,59 @@
     display: inline;
 }
 
-.leftBio {
-    width:200px; 
-    height:400px;
-    top: 100px;
-    right: 34%;
+.bio {
+    
     position: absolute;
-    display: none;
     color: white;
+    font-size: 2vw;
 }
 
-.rightBio {
-    width:200px; 
-    height:400px;
-    top: 100px;
-    left: 34%;
-    position: absolute;
-    display: none;
-    color: white;
+
+
+#kjuBio {
+    width:53%; 
+    height:20%;
+    top: 43%;
+    right: -100%;
+    text-align: left;
+    opacity: 0;
+    
+}
+
+#jkyBio {
+    width:50%; 
+    height:20%;
+    top: 44%;
+    left: -100%;
+    text-align: left;
+    opacity: 0;
+    
+    
 }
 
 #kju {
-    width: 10%;
-    left: 21%;
-    top: 19%;
-    
+    width: 100%;
     height: auto;
     animation: kju-spin infinite 8s linear;
+}
 
+#kjuDiv {
+    width: 10%;
+    left: 17%;
+    top: 5%;
+    position: absolute;
+   
+}
+
+
+
+@keyframes hoverspin1 {
+    100% {transform: rotate(360deg) scale(2);}
+} 
+
+@keyframes hoverspin2 {
+    0% {transform: rotate(360deg) scale(2);}
+    100% {transform: rotate(-360deg) scale(1);}
 }
 
 @keyframes kju-spin {
@@ -72,12 +97,17 @@
 }
 
 #jky {
-    width: 12%;
+    width: 100%;
     height: auto;
-    top: 25%;
-    right: 20%;
-    position: absolute;
+    
     animation: jky-spin infinite 10s linear;
+}
+
+#jkyDiv {
+    width: 12%;
+    top: 8%;
+    right: 15%;
+    position: absolute;
 }
 
 @keyframes jky-spin {
@@ -87,6 +117,17 @@
     75% { transform: rotate(-10deg); }
     100% { transform: rotate(0deg); }
 }
+
+
+
+@keyframes rhoverspin1 {
+    100% {transform: rotate(-360deg) scale(2);}
+}
+
+@keyframes rhoverspin2 {
+    0% {transform: rotate(-360deg) scale(2);}
+    100% {transform: rotate(360deg) scale(1);}
+} 
 
 #glass1 {
     width: 3%;
@@ -152,11 +193,19 @@
 }
 
 #rocketDiv {
+    width: 100%;
+    height: auto;
+    animation: rocket-animate infinite 8s linear; 
+}
+
+#rocketDiv2 {
     top: 15%;
     left: 30%;
     z-index: 5;
     position: absolute;
-    animation: rocket-animate infinite 8s linear;  
+      
+    width: 40%;
+    height: auto;
 }
 
 @keyframes rocket-animate {
@@ -193,5 +242,118 @@
     left: 11%;
     position: absolute;
     
-    
+}
+
+#satellite {
+    width: 100%;
+    animation:  satellite-rotate infinite 12s linear;
+}
+
+@keyframes satellite-move {
+    0% {transform: translate(0%,0%)}
+    50% {transform: translate(30%, 0%)}
+    100% {transform: translate(0%, 0%)}
+}
+
+@keyframes satellite-rotate {
+    0% {transform: rotate(0deg)}
+    25% {transform: rotate(20deg)}
+    75% {transform: rotate(-20deg)}
+    100% {transform: rotate(0deg)}
+}
+
+#stlDiv {
+    width: 20%;
+    height: auto;
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    animation: satellite-move infinite 15s linear;
+}
+
+@keyframes kjuOut {
+    from {left: 17%}
+    to {left: -100%}
+}
+
+@keyframes kjuIn {
+    from {left: -100%}
+    to {left: 17%}
+}
+
+@keyframes jkyOut {
+    from {right: 15%;}
+    to {right: -100%}
+}
+
+@keyframes jkyIn {
+    from {right: -100%}
+    to {right: 15%}
+}
+
+
+@keyframes rocketOut {
+    from {top: 15%}
+    to {top: -100%}
+}
+
+@keyframes rocketIn {
+    from {top: -100%}
+    to {top: 15%}
+}
+
+@keyframes kjuBioIn {
+    from {right: -100%; opacity: 0; }
+    to {right: 5%; opacity: 1;}
+}
+
+@keyframes kjuBioOut {
+    from {right: 5%; opacity: 1}
+    to {right: -100%; opacity: 0}
+}
+
+@keyframes jkyBioIn {
+    from {left: -100%; opacity: 0}
+    to {left: 7%; opacity: 1}
+}
+
+@keyframes jkyBioOut {
+    from {left: 7%; opacity: 1}
+    to {left: -100%; opacity: 0}
+}
+
+.names {
+    color: white;
+    font-size: 4vw;
+    position: absolute;
+}
+
+#kjuName {
+    top: -100%;
+    right: 15%;
+}
+
+@keyframes kjuNameIn {
+    from {top: -100%; opacity: 0}
+    to {top: 35%; opacity: 1}
+}
+
+@keyframes kjuNameOut {
+    from {top: 35%; opacity: 1}
+    to {top: -100%; opacity: 0}
+}
+
+#jkyName {
+    bottom: -100%;
+    left: 22%;
+}
+
+@keyframes jkyNameIn {
+    from {bottom: -100%; opacity: 0}
+    to {bottom: 58%; opacity: 1}
+}
+
+@keyframes jkyNameOut {
+    from {bottom: 58%; opacity: 1}
+    to {bottom: -100%; opacity: 0}
 }
