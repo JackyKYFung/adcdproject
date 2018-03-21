@@ -1,5 +1,5 @@
 body, html {
-  background-image: url(assets/space_background.png);
+  background-image: url(../imgs/space_background.png);
     background-size: cover;
     background-repeat: no-repeat; 
   -webkit-tap-highlight-color: transparent;
@@ -7,7 +7,7 @@ body, html {
 .alien_pic {
     width: 50px;
     height: 50px;
-    background-image: url(assets/alien1.png);
+    background-image: url(../imgs/alien1.png);
     background-size: contain;
     background-repeat: no-repeat;
     float: left;
@@ -17,7 +17,7 @@ body, html {
 .alien_pic2 {
     width: 50px;
     height: 50px;
-    background-image: url(assets/alien2.png);
+    background-image: url(../imgs/alien2.png);
     background-size: contain;
     background-repeat: no-repeat;
     float: left;
@@ -27,7 +27,7 @@ body, html {
 .alien_pic3 {
     width: 50px;
     height: 50px;
-    background-image: url(assets/mothership.png);
+    background-image: url(../imgs/mothership.png);
     background-size: contain;
     background-repeat: no-repeat;
     float: left; 
@@ -100,7 +100,7 @@ body, html {
 }
 
 .game__mole {
-  background-image: url(assets/alien1.png);
+  background-image: url(../imgs/alien1.png);
   background-size: 50px;
   background-repeat: no-repeat;
   background-position: top;
@@ -110,7 +110,7 @@ body, html {
   cursor: pointer;
 }
 .game__mole2 {
-  background-image: url(assets/alien2.png);
+  background-image: url(../imgs/alien2.png);
   background-size: 50px;
   background-repeat: no-repeat;
   background-position: top;
@@ -120,7 +120,7 @@ body, html {
   cursor: pointer;
 }
 .game__mole3 {
-  background-image: url(assets/mothership.png);
+  background-image: url(../imgs/mothership.png);
   background-size: 50px;
   background-repeat: no-repeat;
   background-position: top;
@@ -136,7 +136,7 @@ body, html {
 }
 
 .game__cross {
-  background-image: url(assets/boom.png);
+  background-image: url(../imgs/boom.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 60px;
