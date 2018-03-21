@@ -58,6 +58,10 @@ class App extends Component {
 componentDidMount(){    
     //this.socket = mySocket("localhost:10001");    
 }
+    
+componentWillUnMount(){
+    this.socket.emit("clearGame", "clearGame");
+}    
    
     
 playerName(evt){
