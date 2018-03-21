@@ -4,7 +4,7 @@ import './App.css';
 import Chat from './comp/Chat.js';
 import Landing from "./comp/Landing.js";
 import Stickers from "./comp/Stickers.js"; 
-import Hunter form "./comp/Hunter.js";
+import Hunter from "./comp/Hunter.js";
 import TicTacToe from "./comp/TicTacToe.js";
 import Rooms from "./comp/Rooms.js";
 
