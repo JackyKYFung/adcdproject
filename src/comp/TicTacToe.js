@@ -906,6 +906,8 @@ tttEsc(data){
     this.props.changePage(data);
 }    
     
+    
+    
   render() {
       
       var winWindow = null;
@@ -916,7 +918,7 @@ tttEsc(data){
               
                 <p id="winPhase"> Winner is <span id="winner">{this.state.winner}</span> ! </p>
               
-                <button ref="homeBtn" id="homeBtn">Return to Homepage</button>
+                <button ref="homeBtn" id="homeBtn" onClick={this.tttEsc.bind(this, "home")}>Return to Homepage</button>
               
             </div>
           
@@ -932,7 +934,7 @@ tttEsc(data){
               
                 <p id="winPhase"> Winner is <span id="winner">{this.state.winner}</span> ! </p>
               
-                <button ref="homeBtn" id="homeBtn">Return to Homepage</button>
+                <button ref="homeBtn" id="homeBtn" onClick={this.tttEsc.bind(this, "home")}>Return to Homepage</button>
               
             </div>
               
