@@ -249,6 +249,10 @@
     animation:  satellite-rotate infinite 12s linear;
 }
 
+#satellite:hover {
+    filter:brightness(0.5);
+}
+
 @keyframes satellite-move {
     0% {transform: translate(0%,0%)}
     50% {transform: translate(30%, 0%)}
@@ -356,4 +360,75 @@
 @keyframes jkyNameOut {
     from {bottom: 58%; opacity: 1}
     to {bottom: -100%; opacity: 0}
+}
+
+#stlLabel {
+    top:-30%;
+    left: 26.5%;
+    font-size: 3.5vw;
+    position: absolute;
+    color: white;
+    display: none;
+    z-index: 5;
+    
+}
+
+#tttDiv {
+    width: 20%;
+    height: auto;
+    position: absolute;
+    bottom: 10%;
+    left: 32%;
+    
+    
+}
+
+#xoPlanet {
+    position:absolute;
+    margin:auto;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    width: 50%;
+    height: 60%;
+    
+    animation: planet-rotate infinite 120s linear;
+}
+
+#xoRing {
+    width: 80%;
+    height: 80%;
+    
+    animation: ring-rotate infinite 110s linear;
+}
+
+@keyframes planet-rotate {
+    
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes ring-rotate {
+    
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}
+
+#tttLabel {
+    top:35%;
+    left: 4%;
+    font-size: 3.5vw;
+    position: absolute;
+    color: white;
+    display: none;
+    z-index: 5;
+}
+
+#xoImgs {
+    opacity: 1;
+}
+
+#xoImgs:hover{
+    filter:brightness(0.5);
 }

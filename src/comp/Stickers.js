@@ -19,7 +19,7 @@ class Stickers extends Component {
     }
     componentDidMount(){
         
-       this.socket = mySocket("http://localhost:10000");
+       this.socket = mySocket("localhost:10001");
        
         this.socket.on("userjoined", (data)=>{
             this.setState({

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../css/chat.css';
-import mySocket from 'socket.io-client'
+import mySocket from 'socket.io-client';
 
 class App extends Component {
     
@@ -12,7 +12,8 @@ class App extends Component {
             mode:0,
             allNames:[],
             allMsgs:[],
-            myMsg: ""
+            myMsg: "",
+            myAvt:""
         }
         
         this.joinChat = this.joinChat.bind(this);
@@ -20,6 +21,7 @@ class App extends Component {
         this.handleMyMsg = this.handleMyMsg.bind(this);
         this.sendMsg = this.sendMsg.bind(this);
         this.chatEsc = this.chatEsc.bind(this);
+        this.handleAvatar = this.handleAvatar.bind(this);
     }
     
 
@@ -32,9 +34,14 @@ class App extends Component {
         this.setState({
             mode:1
         })
-        this.socket = mySocket("https://adcdchatsocket.herokuapp.com/");
+        this.socket = mySocket("localhost:10001");
         //names over to the server
-        this.socket.emit("uname", this.state.myname);
+        
+        var userObj = {
+            name:this.state.myname,
+            avt:this.state.myAvt
+        }
+        this.socket.emit("uname", userObj);
         //getting data from the server and emiting who is in the web
         this.socket.on("names", (data)=>{
                 this.setState({
@@ -47,10 +54,7 @@ class App extends Component {
                 allMsgs:data
             })
         });
-        
-        var inputName = document.getElementById("inputName");
-        
-        inputName.value = "";
+
     }
     
     handleName(evt){
@@ -65,13 +69,28 @@ class App extends Component {
         })    
     }
     
+    handleAvatar(evt){
+        //console.log("test");
+        this.setState({
+            myAvt:evt.target.src
+        })
+        
+        console.log(evt.target.src);
+        
+
+
+    }
+    
     sendMsg(){
         var msg = this.state.myname + ": " + 
         this.state.myMsg;
         //Alex: Hi
+        var msgObj = {
+            avt: this.state.myAvt,
+            msg: msg
+        }
         
-        
-        this.socket.emit("sendMsg", msg);
+        this.socket.emit("sendMsg", msgObj);
         
         var msgBox = document.getElementById("msgBox");
         
@@ -79,9 +98,8 @@ class App extends Component {
         
     }
     
-    chatEsc(){
-        var chat = false;
-        this.props.chatToggle(chat);
+    chatEsc(data){
+        this.props.changePage(data);
     }
     
 
@@ -92,7 +110,7 @@ class App extends Component {
     var allNames = this.state.allNames.map((obj, i)=>{
         return(
         <div key={i}>
-            {obj}
+            <img src={obj.avt} height={20}/> {obj.name}
         </div>
         )
     })
@@ -105,7 +123,7 @@ class App extends Component {
             
                     
                   <div id="joinBox">
-                  <button id="escBtn" onClick={this.chatEsc}>X</button>
+                  <button id="escBtn" onClick={this.chatEsc.bind(this, "home")}>X</button>
                   <p id="chatBoxTitle">Lifeform Signal Transmitter</p>
 
 
@@ -119,16 +137,22 @@ class App extends Component {
                 
                   <div id="avatarDiv">
                     
-                    <img src={require('../imgs/avatar1.png')} className="avatars"
+                    <img src={require('../imgs/avatar1.png')} ref="av1" className="avatars"
+                    onClick={this.handleAvatar}
                     />
-                    <img src={require('../imgs/avatar2.png')} className="avatars"
+                    <img src={require('../imgs/avatar2.png')} ref="av2" className="avatars"
+                    onClick={this.handleAvatar}          
                     />
-                    <img src={require('../imgs/avatar3.png')} className="avatars"
+                    <img src={require('../imgs/avatar3.png')} ref="av3" className="avatars"
+                    onClick={this.handleAvatar}            
                     />
                     
-                    <img src={require('../imgs/avatar4.png')} className="avatars"
+                    <img src={require('../imgs/avatar4.png')} ref="av4" className="avatars"
+                    onClick={this.handleAvatar}
                     />
-                    <img src={require('../imgs/avatar5.png')} className="avatars"
+                    
+                    <img src={require('../imgs/avatar5.png')} ref="av5" className="avatars"
+                    onClick={this.handleAvatar}
                     />
               
                     </div>
@@ -145,9 +169,11 @@ class App extends Component {
           
           var allMsgs = this.state.allMsgs.map((obj, i)=>{
               return(
+                  
                 <div key={i}>
-                  {obj}
-                </div>
+                <img src={obj.avt} height={20}/> {obj.msg}
+                </div>  
+                  
               )
           })
           

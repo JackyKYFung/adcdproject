@@ -159,16 +159,20 @@ msgBox:focus {
     opacity: 0.6;
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
-    text-align: center;
+    text-align: left;
     z-index: 0;
 }
 
 #names {
     color: white;
     top: 10%;
-    left: 20%;
+    left: 3.5%;
     position: absolute;
     font-size: 3vw;
+    text-align: left;
+    
+    width: 40%;
+    height: 80%;
      
 }
 
@@ -180,9 +184,9 @@ msgBox:focus {
 #chatDisplay {
     color: white;
     text-align: left;
-    height: 50%;
-    width: 85%;
-    top: 8.5%;
+    height: 85%;
+    width: 80%;
+    top: 5%;
     left: 5%;
     position: absolute;
     font-size: 2.5vw;
@@ -235,14 +239,4 @@ msgBox:focus {
 
 .avatars:hover {
     opacity: 1;
-}
-
-#stlLabel {
-    top: -30%;
-    left: 30%;
-    font-size: 20pt;
-    position: absolute;
-    color: white;
-    display: none;
-    
 }

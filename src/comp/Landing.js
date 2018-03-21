@@ -13,25 +13,31 @@ class App extends Component {
         jkyToggle: false
     }    
     
-    this.chatPage = this.chatPage.bind(this);
+    //this.chatPage = this.chatPage.bind(this);
     this.kjuClick = this.kjuClick.bind(this);
     this.jkyClick = this.jkyClick.bind(this);
-    this.stickerPage = this.stickerPage.bind(this);
+    //this.stickerPage = this.stickerPage.bind(this);
     this.showChatLabel = this.showChatLabel.bind(this);
     this.hideChatLabel = this.hideChatLabel.bind(this);
+    this.showtttLabel = this.showtttLabel.bind(this);
+    this.hidetttLabel = this.hidetttLabel.bind(this);    
+        
+    this.toPage = this.toPage.bind(this);    
+    //this.tttPage = this.tttPage.bind(this);
     //this.roomsPage = this.roomsPage.bind(this);
     //this.rocketAnimate = this.rocketAnimate.bind(this);
     }
     
-chatPage(){
-    var chat = true;
-    this.props.chatToggle(chat);
+toPage(data){
+    this.props.changePage(data);
 }
 
-stickerPage(){
-    var sticker = true;
-    this.props.stickerToggle(sticker);
-}
+//stickerPage(){
+//    var sticker = "stickers";
+//    this.props.changePage(sticker);
+//}
+//    
+    
   
 
 kjuClick(){
@@ -132,6 +138,13 @@ hideChatLabel(){
     this.refs.chatLabel.style.display = "none";
 }
     
+showtttLabel(){
+    this.refs.tttLabel.style.display = "block";
+}
+hidetttLabel(){
+    this.refs.tttLabel.style.display = "none";
+}    
+    
   render() {
     
 
@@ -200,7 +213,7 @@ hideChatLabel(){
         <img 
              id="satellite"
              src={require('../imgs/satellite.png')}
-             onClick={this.chatPage}
+             onClick={this.toPage.bind(this, "chat")}
              onMouseOver={this.showChatLabel}
              onMouseLeave={this.hideChatLabel}
              
@@ -210,7 +223,19 @@ hideChatLabel(){
         <div id="kjuName" ref="kjuName" class="names">Keiju Sekiguchi</div>
         <div id="jkyName" ref="jkyName" class="names">Jacky Fung</div>
         
-        <button onClick={this.stickerPage}>STICKERS</button>
+        <button onClick={this.toPage.bind(this, "stickers")}>STICKERS</button>
+        
+        
+        <div id="tttDiv" onMouseOver={this.showtttLabel}
+             onMouseLeave={this.hidetttLabel} onClick={this.toPage.bind(this, "ttt")}>
+                 
+            <div id="tttLabel" ref="tttLabel">TicTacToe</div>     
+            <div id="xoImgs">
+                <img id="xoPlanet" src={require("../imgs/xoPlanet.png")} />
+                <img id="xoRing" src={require("../imgs/xoRing.png")} />    
+            </div>    
+        </div>    
+       
         
         </div>
         
