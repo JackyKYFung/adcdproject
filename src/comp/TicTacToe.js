@@ -69,7 +69,7 @@ playerName(evt){
 }    
     
 joinGame(){
-    this.socket = mySocket("http://localhost:10001");
+    this.socket = mySocket("https://adcdtttsocket.herokuapp.com/");
     
     this.socket.emit("username", this.state.name);
     

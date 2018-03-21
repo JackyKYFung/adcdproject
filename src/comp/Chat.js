@@ -34,7 +34,7 @@ class App extends Component {
         this.setState({
             mode:1
         })
-        this.socket = mySocket("localhost:10001");
+        this.socket = mySocket("https://adcdchatsocket.herokuapp.com/");
         //names over to the server
         
         var userObj = {
