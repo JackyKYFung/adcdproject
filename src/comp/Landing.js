@@ -225,6 +225,8 @@ hidetttLabel(){
         
         <button onClick={this.toPage.bind(this, "stickers")}>STICKERS</button>
         
+        <button onClick={this.toPage.bind(this, "hunter")}>HUNTER</button>
+        
         
         <div id="tttDiv" onMouseOver={this.showtttLabel}
              onMouseLeave={this.hidetttLabel} onClick={this.toPage.bind(this, "ttt")}>
