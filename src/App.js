@@ -70,7 +70,11 @@ render() {
                 />    
     }
         
-
+    if (this.state.page == "hunter"){
+        comp = <Hunter 
+                    changePage={this.changePage}
+                />    
+    }
         
         
         
